@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chip_widget_icomoon/icomoon.dart';
+import 'package:chip_widget_icomoon/shared/design/icomoon.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InputChipDisplay extends StatefulWidget {
