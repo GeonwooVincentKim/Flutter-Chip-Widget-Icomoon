@@ -19,10 +19,10 @@ class MyApp extends StatelessWidget {
         primaryColor: new Color(0xff6200ee),
         //primaryColor: new Color(0xffF2601F),
       ),
-       //home: InputChipDisplay(),//inputChip
-      //home: ChoiceChipDisplay(),//choicechip
-       home: FilterChipDisplay(),//filterchip
-      //home: ActionChipDisplay(),//actionchip
+      //  home: InputChipDisplay(),//inputChip
+      // home: ChoiceChipDisplay(),//choicechip
+      //  home: FilterChipDisplay(),//filterchip
+      home: ActionChipDisplay(),//actionchip
     );
   }
 }
