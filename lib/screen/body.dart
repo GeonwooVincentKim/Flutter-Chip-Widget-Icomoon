@@ -32,7 +32,7 @@ class _BodyState extends State<Body> {
   Widget _buildBody(){
     return PageView(
       controller: _pageController,
-      physics: ClampingScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),
       children: [
         FirstPage(pageIndex: pageIndex, pageTitle: "First Page", pageInfo: _buildBottomNavigationBar),
         SecondPage(pageIndex: pageIndex, pageTitle: "Second Page", pageInfo: _buildBottomNavigationBar),
