@@ -1,3 +1,8 @@
+import 'package:chip_widget_icomoon/data/provider/provider_first.dart';
+import 'package:chip_widget_icomoon/data/provider/provider_fourth.dart';
+import 'package:chip_widget_icomoon/data/provider/provider_second.dart';
+import 'package:chip_widget_icomoon/data/provider/provider_third.dart';
+import 'package:chip_widget_icomoon/screen/body.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'chip_widget/inputchipdisplay.dart';
@@ -12,7 +17,10 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-
+        ChangeNotifierProvider(create: (_) => ProviderFirst()),
+        ChangeNotifierProvider(create: (_) => ProviderSecond()),
+        ChangeNotifierProvider(create: (_) => ProviderThird()),
+        ChangeNotifierProvider(create: (_) => ProviderFourth()),
       ],
       child: MaterialApp(
         title: "Fluitter Chips",
@@ -22,8 +30,8 @@ class MyApp extends StatelessWidget{
         initialRoute: "/",
         routes: {
           // "/": (context) => MyApp(),
-          // "/": (context) => Body(),
-          "/detail": (context) => MyApp(),
+          "/": (context) => Body(),
+          // "/detail": (context) => MyApp(),
         }
       ),
     );
