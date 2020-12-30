@@ -1,3 +1,4 @@
+import 'package:chip_widget_icomoon/screen/side/sidemenu.dart';
 import 'package:flutter/material.dart';
 
 
@@ -5,11 +6,13 @@ class SecondPage extends StatefulWidget {
   final int pageIndex;
   final String pageTitle;
   final Function pageInfo;
+  final Function pageAppBarInfo;
   
   SecondPage({
     @required this.pageIndex,
     @required this.pageTitle,
-    @required this.pageInfo
+    @required this.pageInfo,
+    @required this.pageAppBarInfo
   });
 
   @override
@@ -17,6 +20,21 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
+  Widget _buildSecondPageAppBar(){
+    return AppBar(
+      title: Text(widget.pageTitle),
+      centerTitle: true,
+      actions: [
+
+      ],
+      // bottom: TabBar(
+      //   tabs: _buildTabBarItem(),
+      //   controller: _tabController,
+      //   onTap: (index) => _tapTabBar(index),
+      // )
+    );
+  }
+
   Widget _buildSecondPageBody(){
     return Container(
       padding: EdgeInsets.all(20.0),
@@ -37,8 +55,9 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: _buildSecondPageAppBar(),
       body: _buildSecondPageBody(),
-      // drawer: SideMenu(),
+      drawer: SideMenu(),
     );
   }
 }

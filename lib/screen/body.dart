@@ -43,7 +43,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin{
       physics: NeverScrollableScrollPhysics(),
       children: [
         FirstPage(pageIndex: pageIndex, pageTitle: "First Page", pageInfo: _buildBottomNavigationBar, pageAppBarInfo: _buildAppTapBar),
-        SecondPage(pageIndex: pageIndex, pageTitle: "Second Page", pageInfo: _buildBottomNavigationBar),
+        SecondPage(pageIndex: pageIndex, pageTitle: "Second Page", pageInfo: _buildBottomNavigationBar, pageAppBarInfo: _buildAppTapBar),
         ThirdPage(pageIndex: pageIndex, pageTitle: "Third Page", pageInfo: _buildBottomNavigationBar),
         FourthPage(pageIndex: pageIndex, pageTitle: "Fourth Page", pageInfo: _buildBottomNavigationBar)
       ]
@@ -66,7 +66,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin{
     // setState(() => _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease));
     setState(() {
       pageIndex = index;
-      _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+      // _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
     });
   }
 

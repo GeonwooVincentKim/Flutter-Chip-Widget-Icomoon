@@ -1,3 +1,7 @@
+import 'package:chip_widget_icomoon/screen/page/sub_page/first_sub_page.dart';
+import 'package:chip_widget_icomoon/screen/page/sub_page/fourth_sub_page.dart';
+import 'package:chip_widget_icomoon/screen/page/sub_page/second_sub_page.dart';
+import 'package:chip_widget_icomoon/screen/page/sub_page/third_sub_page.dart';
 import 'package:chip_widget_icomoon/screen/side/sidemenu.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +25,7 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> with SingleTickerProviderStateMixin {
   TabController _tabController;
+  int subPageIndex = 0;
 
   @override
   void initState(){
@@ -38,18 +43,21 @@ class _FirstPageState extends State<FirstPage> with SingleTickerProviderStateMix
       bottom: TabBar(
         tabs: _buildTabBarItem(),
         controller: _tabController,
-        onTap: (index) => _tapTabBar(index),
+        // onTap: (index) => _tapTabBar(index),
       )
     );
   }
 
-  void _tapTabBar(int index){
-  // setState(() => _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease));
+  // void _tapTabBar(int index){
     // setState(() {
-    //   pageIndex = index;
-    //   _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+    //   subPageIndex = index;
     // });
-  }
+  // setState(() => _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease));
+  //  setState(() {
+  //    subPageIndex = index;
+      // _tabController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+  //   });
+  // }
 
   List<Tab> _buildTabBarItem(){
     return [
@@ -73,20 +81,29 @@ class _FirstPageState extends State<FirstPage> with SingleTickerProviderStateMix
   }
 
   Widget _buildFirstPageBody(){
-    return Container(
-      padding: EdgeInsets.all(20.0),
-      child: GridView.builder(
-        shrinkWrap: true,
-        itemCount: 10,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 0.8,
-          mainAxisSpacing: 0.8,
-        ),
-        // itemBuilder: (context, index) =>
-        itemBuilder: (context, index) => Text("First One")
-      )
+    return TabBarView(
+      controller: _tabController,
+      children: [
+        FirstSubPage(subPageIndex: subPageIndex),
+        SecondSubPage(subPageIndex: subPageIndex),
+        ThirdSubPage(subPageIndex: subPageIndex),
+        FourthSubPage(subPageIndex: subPageIndex),
+      ],
     );
+    // return Container(
+    //   padding: EdgeInsets.all(20.0),
+    //   child: GridView.builder(
+    //     shrinkWrap: true,
+    //     itemCount: 10,
+    //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    //       crossAxisCount: 2,
+    //       crossAxisSpacing: 0.8,
+    //       mainAxisSpacing: 0.8,
+    //     ),
+    //     // itemBuilder: (context, index) =>
+    //     itemBuilder: (context, index) => Text("First One")
+    //   )
+    // );
   }
 
   @override
