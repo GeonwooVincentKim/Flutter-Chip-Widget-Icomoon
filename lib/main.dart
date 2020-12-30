@@ -5,10 +5,6 @@ import 'package:chip_widget_icomoon/data/provider/provider_third.dart';
 import 'package:chip_widget_icomoon/screen/body.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'chip_widget/inputchipdisplay.dart';
-import 'chip_widget/choicechip.dart';
-import 'chip_widget/filterchip.dart';
-import 'chip_widget/actionchip.dart';
 
 void main() => runApp(MyApp());
 
