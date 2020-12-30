@@ -114,7 +114,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppTapBar(),
+      // appBar: _buildAppTapBar(),
       body: _buildBody(),
       bottomNavigationBar: _buildBottomNavigationBar(context),
     );

@@ -82,7 +82,7 @@ class _FirstPageState extends State<FirstPage> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: _buildFirstPageAppBar(),
+      appBar: _buildFirstPageAppBar(),
       body: _buildFirstPageBody(),
       // drawer: SideMenu(),
     );
