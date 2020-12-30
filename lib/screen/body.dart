@@ -32,6 +32,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin{
       bottom: TabBar(
         tabs: _buildTabBarItem(),
         controller: tabController,
+        onTap: (index) => _tapBottom(index),
       )
     );
   }

@@ -37,9 +37,18 @@ class _FirstPageState extends State<FirstPage> with SingleTickerProviderStateMix
       ],
       bottom: TabBar(
         tabs: _buildTabBarItem(),
-        controller: _tabController
+        controller: _tabController,
+        onTap: (index) => _tapTabBar(index),
       )
     );
+  }
+
+  void _tapTabBar(int index){
+  // setState(() => _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease));
+    // setState(() {
+    //   pageIndex = index;
+    //   _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+    // });
   }
 
   List<Tab> _buildTabBarItem(){
