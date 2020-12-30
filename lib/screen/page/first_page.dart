@@ -1,3 +1,4 @@
+import 'package:chip_widget_icomoon/screen/side/sidemenu.dart';
 import 'package:flutter/material.dart';
 
 
@@ -84,7 +85,7 @@ class _FirstPageState extends State<FirstPage> with SingleTickerProviderStateMix
     return Scaffold(
       appBar: _buildFirstPageAppBar(),
       body: _buildFirstPageBody(),
-      // drawer: SideMenu(),
+      drawer: SideMenu(),
     );
   }
 }
