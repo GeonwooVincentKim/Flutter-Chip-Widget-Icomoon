@@ -11,20 +11,27 @@ class Body extends StatefulWidget {
   _BodyState createState() => _BodyState();
 }
 
-class _BodyState extends State<Body> {
+class _BodyState extends State<Body> with SingleTickerProviderStateMixin{
   String title;
   int pageIndex = 0;
+  TabController tabController;
   PageController _pageController = PageController(
     initialPage: 0,
     keepPage: true
   );
 
-  Widget _buildAppBar(){
+   @override
+  void initState(){
+    tabController = TabController(length: 4, vsync: this);
+    super.initState();
+  }
+
+  Widget _buildAppTapBar(){
     return AppBar(
       centerTitle: true,
       bottom: TabBar(
         tabs: _buildTabBarItem(),
-
+        controller: tabController,
       )
     );
   }
@@ -34,7 +41,7 @@ class _BodyState extends State<Body> {
       controller: _pageController,
       physics: NeverScrollableScrollPhysics(),
       children: [
-        FirstPage(pageIndex: pageIndex, pageTitle: "First Page", pageInfo: _buildBottomNavigationBar),
+        FirstPage(pageIndex: pageIndex, pageTitle: "First Page", pageInfo: _buildBottomNavigationBar, pageAppBarInfo: _buildAppTapBar),
         SecondPage(pageIndex: pageIndex, pageTitle: "Second Page", pageInfo: _buildBottomNavigationBar),
         ThirdPage(pageIndex: pageIndex, pageTitle: "Third Page", pageInfo: _buildBottomNavigationBar),
         FourthPage(pageIndex: pageIndex, pageTitle: "Fourth Page", pageInfo: _buildBottomNavigationBar)
@@ -107,7 +114,7 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: _buildAppBar(),
+      appBar: _buildAppTapBar(),
       body: _buildBody(),
       bottomNavigationBar: _buildBottomNavigationBar(context),
     );
