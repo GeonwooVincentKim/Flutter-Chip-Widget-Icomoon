@@ -1,7 +1,7 @@
-import 'package:chip_widget_icomoon/screen/page/sub_page/first_sub_page.dart';
-import 'package:chip_widget_icomoon/screen/page/sub_page/fourth_sub_page.dart';
-import 'package:chip_widget_icomoon/screen/page/sub_page/second_sub_page.dart';
-import 'package:chip_widget_icomoon/screen/page/sub_page/third_sub_page.dart';
+import 'package:chip_widget_icomoon/screen/page/first_sub_page/first_sub_page.dart';
+import 'package:chip_widget_icomoon/screen/page/first_sub_page/fourth_sub_page.dart';
+import 'package:chip_widget_icomoon/screen/page/first_sub_page/second_sub_page.dart';
+import 'package:chip_widget_icomoon/screen/page/first_sub_page/third_sub_page.dart';
 import 'package:chip_widget_icomoon/screen/side/sidemenu.dart';
 import 'package:flutter/material.dart';
 
